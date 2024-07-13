@@ -15,8 +15,8 @@ export const sendToken = (user, statusCode, res, message) => {
         expires: new Date(Date.now() + cookieExpireDays * 24 * 60 * 60 * 1000),
         httpOnly: true,
         // secure: process.env.NODE_ENV === 'production' // Uncomment if needed for production
-        secure: true,
-        sameSite: "None",
+        // secure: true,
+        // sameSite: "None",
     };
 
     res.status(statusCode).cookie("token", token, options).json({
